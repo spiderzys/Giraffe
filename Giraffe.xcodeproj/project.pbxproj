@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6970E7A31D2EB4A6004017BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6970E7A21D2EB4A6004017BB /* AppDelegate.swift */; };
+		6970E7A51D2EB4A6004017BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6970E7A41D2EB4A6004017BB /* FirstViewController.swift */; };
+		6970E7A71D2EB4A6004017BB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6970E7A61D2EB4A6004017BB /* SecondViewController.swift */; };
+		6970E7AA1D2EB4A6004017BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6970E7A81D2EB4A6004017BB /* Main.storyboard */; };
+		6970E7AC1D2EB4A6004017BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6970E7AB1D2EB4A6004017BB /* Assets.xcassets */; };
+		6970E7AF1D2EB4A6004017BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6970E7AD1D2EB4A6004017BB /* LaunchScreen.storyboard */; };
+		6970E7BA1D2EB4A6004017BB /* GiraffeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6970E7B91D2EB4A6004017BB /* GiraffeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6970E7B61D2EB4A6004017BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6970E7971D2EB4A6004017BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6970E79E1D2EB4A6004017BB;
+			remoteInfo = Giraffe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6970E79F1D2EB4A6004017BB /* Giraffe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giraffe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6970E7A21D2EB4A6004017BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6970E7A41D2EB4A6004017BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		6970E7A61D2EB4A6004017BB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		6970E7A91D2EB4A6004017BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6970E7AB1D2EB4A6004017BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6970E7AE1D2EB4A6004017BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6970E7B01D2EB4A6004017BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6970E7B51D2EB4A6004017BB /* GiraffeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiraffeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6970E7B91D2EB4A6004017BB /* GiraffeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiraffeUITests.swift; sourceTree = "<group>"; };
+		6970E7BB1D2EB4A6004017BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6970E79C1D2EB4A6004017BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6970E7B21D2EB4A6004017BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6970E7961D2EB4A6004017BB = {
+			isa = PBXGroup;
+			children = (
+				6970E7A11D2EB4A6004017BB /* Giraffe */,
+				6970E7B81D2EB4A6004017BB /* GiraffeUITests */,
+				6970E7A01D2EB4A6004017BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6970E7A01D2EB4A6004017BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6970E79F1D2EB4A6004017BB /* Giraffe.app */,
+				6970E7B51D2EB4A6004017BB /* GiraffeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6970E7A11D2EB4A6004017BB /* Giraffe */ = {
+			isa = PBXGroup;
+			children = (
+				6970E7A21D2EB4A6004017BB /* AppDelegate.swift */,
+				6970E7A41D2EB4A6004017BB /* FirstViewController.swift */,
+				6970E7A61D2EB4A6004017BB /* SecondViewController.swift */,
+				6970E7A81D2EB4A6004017BB /* Main.storyboard */,
+				6970E7AB1D2EB4A6004017BB /* Assets.xcassets */,
+				6970E7AD1D2EB4A6004017BB /* LaunchScreen.storyboard */,
+				6970E7B01D2EB4A6004017BB /* Info.plist */,
+			);
+			path = Giraffe;
+			sourceTree = "<group>";
+		};
+		6970E7B81D2EB4A6004017BB /* GiraffeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6970E7B91D2EB4A6004017BB /* GiraffeUITests.swift */,
+				6970E7BB1D2EB4A6004017BB /* Info.plist */,
+			);
+			path = GiraffeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6970E79E1D2EB4A6004017BB /* Giraffe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6970E7BE1D2EB4A6004017BB /* Build configuration list for PBXNativeTarget "Giraffe" */;
+			buildPhases = (
+				6970E79B1D2EB4A6004017BB /* Sources */,
+				6970E79C1D2EB4A6004017BB /* Frameworks */,
+				6970E79D1D2EB4A6004017BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Giraffe;
+			productName = Giraffe;
+			productReference = 6970E79F1D2EB4A6004017BB /* Giraffe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6970E7B41D2EB4A6004017BB /* GiraffeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6970E7C11D2EB4A6004017BB /* Build configuration list for PBXNativeTarget "GiraffeUITests" */;
+			buildPhases = (
+				6970E7B11D2EB4A6004017BB /* Sources */,
+				6970E7B21D2EB4A6004017BB /* Frameworks */,
+				6970E7B31D2EB4A6004017BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6970E7B71D2EB4A6004017BB /* PBXTargetDependency */,
+			);
+			name = GiraffeUITests;
+			productName = GiraffeUITests;
+			productReference = 6970E7B51D2EB4A6004017BB /* GiraffeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6970E7971D2EB4A6004017BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "YANGSHENG ZOU";
+				TargetAttributes = {
+					6970E79E1D2EB4A6004017BB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					6970E7B41D2EB4A6004017BB = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 6970E79E1D2EB4A6004017BB;
+					};
+				};
+			};
+			buildConfigurationList = 6970E79A1D2EB4A6004017BB /* Build configuration list for PBXProject "Giraffe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6970E7961D2EB4A6004017BB;
+			productRefGroup = 6970E7A01D2EB4A6004017BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6970E79E1D2EB4A6004017BB /* Giraffe */,
+				6970E7B41D2EB4A6004017BB /* GiraffeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6970E79D1D2EB4A6004017BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6970E7AF1D2EB4A6004017BB /* LaunchScreen.storyboard in Resources */,
+				6970E7AC1D2EB4A6004017BB /* Assets.xcassets in Resources */,
+				6970E7AA1D2EB4A6004017BB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6970E7B31D2EB4A6004017BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6970E79B1D2EB4A6004017BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6970E7A71D2EB4A6004017BB /* SecondViewController.swift in Sources */,
+				6970E7A31D2EB4A6004017BB /* AppDelegate.swift in Sources */,
+				6970E7A51D2EB4A6004017BB /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6970E7B11D2EB4A6004017BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6970E7BA1D2EB4A6004017BB /* GiraffeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6970E7B71D2EB4A6004017BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6970E79E1D2EB4A6004017BB /* Giraffe */;
+			targetProxy = 6970E7B61D2EB4A6004017BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6970E7A81D2EB4A6004017BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6970E7A91D2EB4A6004017BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6970E7AD1D2EB4A6004017BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6970E7AE1D2EB4A6004017BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6970E7BC1D2EB4A6004017BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6970E7BD1D2EB4A6004017BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6970E7BF1D2EB4A6004017BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Giraffe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zys.Giraffe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6970E7C01D2EB4A6004017BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Giraffe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zys.Giraffe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6970E7C21D2EB4A6004017BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GiraffeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zys.GiraffeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Giraffe;
+			};
+			name = Debug;
+		};
+		6970E7C31D2EB4A6004017BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GiraffeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zys.GiraffeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Giraffe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6970E79A1D2EB4A6004017BB /* Build configuration list for PBXProject "Giraffe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6970E7BC1D2EB4A6004017BB /* Debug */,
+				6970E7BD1D2EB4A6004017BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6970E7BE1D2EB4A6004017BB /* Build configuration list for PBXNativeTarget "Giraffe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6970E7BF1D2EB4A6004017BB /* Debug */,
+				6970E7C01D2EB4A6004017BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6970E7C11D2EB4A6004017BB /* Build configuration list for PBXNativeTarget "GiraffeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6970E7C21D2EB4A6004017BB /* Debug */,
+				6970E7C31D2EB4A6004017BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6970E7971D2EB4A6004017BB /* Project object */;
+}
