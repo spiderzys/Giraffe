@@ -39,7 +39,7 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
         productPageControl.numberOfPages = productImageNameArray.count
         modalTransitionStyle = .FlipHorizontal
-        descriptionTextView.text = "Kimomo dress in tafeta with \"Kimomo 1997\" print.\n -inner side pockets.\n-front warpround fastening with two tie laces and belt"
+        descriptionTextView.text = "Kimomo dress in tafeta with \"Kimomo 1997\" print.\n -inner side pockets.\n -front warpround fastening with two tie laces and belt"
          selectedProductCollectionView.registerNib(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: productCellreuseIdentifier)
         // Do any additional setup after loading the view.
     }
