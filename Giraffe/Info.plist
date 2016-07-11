@@ -28,6 +28,8 @@
 		<string>MyriadPro-It.otf</string>
 		<string>MyriadPro-Regular.otf</string>
 		<string>MyriadPro-Semibold.otf</string>
+		<string>Moon Bold</string>
+		<string>Moon Light</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

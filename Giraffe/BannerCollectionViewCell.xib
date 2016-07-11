@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="image" id="gTV-IL-0wX" customClass="BannerCollectionViewCell" customModule="Giraffe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="205" height="149"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="205" height="149"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6AG-yF-Uq7">
+                        <rect key="frame" x="0.0" y="0.0" width="205" height="149"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" red="0.94759615379999995" green="0.94759615379999995" blue="0.94759615379999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6AG-yF-Uq7" secondAttribute="trailing" id="58u-CC-U55"/>
+                <constraint firstAttribute="bottom" secondItem="6AG-yF-Uq7" secondAttribute="bottom" id="HcK-WW-wTJ"/>
+                <constraint firstItem="6AG-yF-Uq7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Twf-vQ-it5"/>
+                <constraint firstItem="6AG-yF-Uq7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Vdb-nr-u2S"/>
+            </constraints>
+            <size key="customSize" width="205" height="149"/>
+            <connections>
+                <outlet property="bannerImageView" destination="6AG-yF-Uq7" id="Vwq-7r-ZpM"/>
+            </connections>
+            <point key="canvasLocation" x="357.5" y="301.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

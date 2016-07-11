@@ -12,10 +12,12 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var brandCollectionView: UICollectionView!
     
-    @IBOutlet weak var displaySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var brandTableView: UITableView!
+ //   @IBOutlet weak var displaySegmentedControl: UISegmentedControl!
     
     let brandCellReuseIdentifier = "brand"
-    var brandImageStringArray = ["b0","b1","b2","b3","b4","b5","b6","b7","b8","b9","b10","b11"]
+   // let brandTableCellReuseIdentifier = "brand2"
+    var brandImageNameArray = ["apple","BeatsDrDre","Burberry","Chanel","Fendi","Huawei","intel","jordan","playstation","Samsung","ssense","Xbox"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,18 @@ class SecondViewController: UIViewController {
     }
 
     @IBAction func segmentChanged(sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            sender.setImage(UIImage.init(named: "view_brand_by_logo_icon_clicked"), forSegmentAtIndex: 0)
+            sender.setImage(UIImage.init(named: "view_brand_by_name_icon"), forSegmentAtIndex: 1)
+            brandTableView.hidden = true
+            brandCollectionView.hidden = false
+        }
+        else {
+            sender.setImage(UIImage.init(named: "view_brand_by_logo_icon"), forSegmentAtIndex: 0)
+            sender.setImage(UIImage.init(named: "view_brand_by_name_icon_clicked"), forSegmentAtIndex: 1)
+            brandTableView.hidden = false
+            brandCollectionView.hidden = true
+        }
     }
     
     func collectionView(collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize{
@@ -43,14 +57,41 @@ class SecondViewController: UIViewController {
         
     func collectionView(collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int{
-        return brandImageStringArray.count
+        return brandImageNameArray.count
     }
     func collectionView(collectionView: UICollectionView,
                         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         let brandCell = collectionView.dequeueReusableCellWithReuseIdentifier(brandCellReuseIdentifier, forIndexPath: indexPath) as! BrandCollectionViewCell
-        brandCell.brandImageView.image = UIImage.init(named: brandImageStringArray[indexPath.row])
+        brandCell.brandImageView.image = UIImage.init(named: brandImageNameArray[indexPath.row])
         brandCell.contentView.backgroundColor = UIColor.grayColor()
         return brandCell
+    }
+    
+    
+    func tableView(tableview: UITableView,
+                   heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    
+        return 40
+    }
+    
+    func tableView(tableView: UITableView,
+                   didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+    }
+    
+    func tableView(_: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return brandImageNameArray.count
+    }
+    
+    func tableView(tablewview: UITableView,
+                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        var brandCell = tablewview.dequeueReusableCellWithIdentifier(brandCellReuseIdentifier)
+        if brandCell == nil {
+             brandCell = UITableViewCell.init(style: .Default, reuseIdentifier: brandCellReuseIdentifier)
+        }
+        brandCell?.textLabel?.text = brandImageNameArray[indexPath.row]
+        return brandCell!
     }
 }
 
