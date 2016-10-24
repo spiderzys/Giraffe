@@ -16,8 +16,8 @@ class loginTextField: UITextField {
     override func drawRect(rect: CGRect) {
         // Drawing code
         let context =  UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, UIColor.grayColor().CGColor)
-        CGContextFillRect(context,CGRectMake(0, CGRectGetHeight(self.frame) - 0.5, CGRectGetWidth(self.frame), 0.5))
+        CGContextSetFillColorWithColor(context!, UIColor.grayColor().CGColor)
+        CGContextFillRect(context!,CGRectMake(0, CGRectGetHeight(self.frame) - 0.5, CGRectGetWidth(self.frame), 0.5))
         
     }
     
