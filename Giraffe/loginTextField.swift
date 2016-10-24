@@ -13,11 +13,11 @@ class loginTextField: UITextField {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
         let context =  UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, UIColor.grayColor().CGColor)
-        CGContextFillRect(context,CGRectMake(0, CGRectGetHeight(self.frame) - 0.5, CGRectGetWidth(self.frame), 0.5))
+        context!.setFillColor(UIColor.gray.cgColor)
+        context!.fill(CGRect(x:0, y:self.frame.height - 0.5, width:self.frame.width, height:0.5))
         
     }
     

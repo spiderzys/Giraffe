@@ -27,10 +27,10 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     // Do any additional setup after loading the view.
-        homeTableView.registerNib(UINib.init(nibName: "BannerCell", bundle: nil), forCellReuseIdentifier: bannerCellReuseIdentifier)
-        homeTableView.registerNib(UINib.init(nibName: "SaleCell", bundle: nil), forCellReuseIdentifier: saleCellReuseIdentifier)
+        homeTableView.register(UINib.init(nibName: "BannerCell", bundle: nil), forCellReuseIdentifier: bannerCellReuseIdentifier)
+        homeTableView.register(UINib.init(nibName: "SaleCell", bundle: nil), forCellReuseIdentifier: saleCellReuseIdentifier)
 
-        homeTableView.registerNib(UINib.init(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: productCellReuseIdentifier)
+        homeTableView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: productCellReuseIdentifier)
     }
     
 
@@ -41,20 +41,22 @@ class FirstViewController: UIViewController {
     
     
     
-    func tableView(tableview: UITableView,
-                   heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                        heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return tableview.bounds.width / CGFloat(bannerRatio)
+            return tableView.bounds.width / CGFloat(bannerRatio)
         case 1:
-            return tableview.bounds.width / CGFloat(saleRatio)
+            return tableView.bounds.width / CGFloat(saleRatio)
         default:
-            return tableview.bounds.width / CGFloat(productRatio)
+            return tableView.bounds.width / CGFloat(productRatio)
         }
     }
     
-    func tableView(tableView: UITableView,
-                   didSelectRowAtIndexPath indexPath: NSIndexPath){
+    
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
         showOrderViewController()
         
         //Todo: set different imageName array for each presenting view
@@ -63,32 +65,35 @@ class FirstViewController: UIViewController {
     
     func showOrderViewController() {
         let orderViewController = OrderViewController.init(nibName: "OrderViewController", bundle: nil, imageNameArray: ["product_pic_01","product_pic_02","product_pic_03","product_pic_04"], zoomImageNameArray: ["product_pic_clicked_zoom_out_01","product_pic_clicked_zoom_out_02","product_pic_clicked_zoom_out_03","product_pic_clicked_zoom_out_04"])
-        presentViewController(orderViewController, animated: true, completion: nil)
+        present(orderViewController, animated: true, completion: nil)
     }
     
-    func numberOfSectionsInTableView(tableView:UITableView!)->Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 2 + productImageNameArray.count
     }
-    func tableView(_: UITableView,
+    
+    
+    
+    func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
         return 1
     }
     
-    func tableView(tablewview: UITableView,
-                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         switch indexPath.section {
         case 0:
-            let bannerCell = tablewview.dequeueReusableCellWithIdentifier(bannerCellReuseIdentifier)
+            let bannerCell = tableView.dequeueReusableCell(withIdentifier: bannerCellReuseIdentifier)
                 as! BannerCell
             
             return bannerCell
         case 1:
-            let saleCell = tablewview.dequeueReusableCellWithIdentifier(saleCellReuseIdentifier)
+            let saleCell = tableView.dequeueReusableCell(withIdentifier: saleCellReuseIdentifier)
                 as! SaleCell
             return saleCell
         default:
-            let productCell = tablewview.dequeueReusableCellWithIdentifier(productCellReuseIdentifier) as! ProductCell
+            let productCell = tableView.dequeueReusableCell(withIdentifier: productCellReuseIdentifier) as! ProductCell
             productCell.productImageView.image = UIImage.init(named: productImageNameArray[indexPath.section - 2])
             return productCell
         }
