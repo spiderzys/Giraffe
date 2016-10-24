@@ -20,7 +20,7 @@ class testViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerCollectionView.registerNib(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: bannerCollectionViewCellReuseIdentifier)
+        bannerCollectionView.register(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: bannerCollectionViewCellReuseIdentifier)
         
         print(bannerCollectionView.frame.width)
         
@@ -40,20 +40,20 @@ class testViewController: UIViewController {
  */
     }
     
-    func collectionView(collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize{
+    func collectionView(_ collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:IndexPath) -> CGSize{
         
         return CGSize(width: collectionView.bounds.width-16, height: collectionView.bounds.height)
     }
     
     
-    func collectionView(collectionView: UICollectionView,
+    func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int{
         return bannerStringArray.count
     }
-    func collectionView(collectionView: UICollectionView,
-                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        let bannerCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(bannerCollectionViewCellReuseIdentifier, forIndexPath: indexPath) as! BannerCollectionViewCell
-        bannerCollectionViewCell.bannerImageView.image = UIImage.init(named: bannerStringArray[indexPath.row])
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell{
+        let bannerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: bannerCollectionViewCellReuseIdentifier, for: indexPath) as! BannerCollectionViewCell
+        bannerCollectionViewCell.bannerImageView.image = UIImage.init(named: bannerStringArray[(indexPath as NSIndexPath).row])
        // bannerCollectionView.backgroundView?.clipsToBounds = true
         print(bannerCollectionView.bounds.width)
         // bannerCollectionViewCell.contentView.backgroundColor = UIColor.grayColor()

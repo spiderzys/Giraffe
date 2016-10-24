@@ -14,7 +14,7 @@ class ZoomImageViewController: UIViewController {
     
     var zoomImageName: String
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, imageName:String!) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, imageName:String!) {
         self.zoomImageName = imageName
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -35,8 +35,8 @@ class ZoomImageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dismissSelf(sender: UITapGestureRecognizer) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func dismissSelf(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
     }
     
     

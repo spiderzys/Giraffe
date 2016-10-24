@@ -24,7 +24,7 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
     var productImageNameArray: [String];
     let productCellreuseIdentifier = "image"
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, imageNameArray: [String]!, zoomImageNameArray: [String]!) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, imageNameArray: [String]!, zoomImageNameArray: [String]!) {
         self.productImageNameArray = imageNameArray
         self.productZoomImageNameArray = zoomImageNameArray
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -38,9 +38,9 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         productPageControl.numberOfPages = productImageNameArray.count
-        modalTransitionStyle = .FlipHorizontal
+        modalTransitionStyle = .flipHorizontal
         descriptionTextView.text = "Kimomo dress in tafeta with \"Kimomo 1997\" print.\n -inner side pockets.\n -front warpround fastening with two tie laces and belt"
-         selectedProductCollectionView.registerNib(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: productCellreuseIdentifier)
+         selectedProductCollectionView.register(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: productCellreuseIdentifier)
         // Do any additional setup after loading the view.
     }
 
@@ -48,7 +48,7 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func collectionView(collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize{
+    func collectionView(_ collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:IndexPath) -> CGSize{
         
         if collectionView.bounds.width > 400 {
             return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
@@ -57,40 +57,40 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
     }
     
     
-    func collectionView(collectionView: UICollectionView,
+    func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int{
         return productImageNameArray.count
     }
-    func collectionView(collectionView: UICollectionView,
-                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        let bannerCell = collectionView.dequeueReusableCellWithReuseIdentifier(productCellreuseIdentifier, forIndexPath: indexPath) as! BannerCollectionViewCell
-        bannerCell.bannerImageView.image = UIImage.init(named: productImageNameArray[indexPath.row])
-        bannerCell.bannerImageView.contentMode = .ScaleAspectFill
-        bannerCell.contentView.backgroundColor = UIColor.grayColor()
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell{
+        let bannerCell = collectionView.dequeueReusableCell(withReuseIdentifier: productCellreuseIdentifier, for: indexPath) as! BannerCollectionViewCell
+        bannerCell.bannerImageView.image = UIImage.init(named: productImageNameArray[(indexPath as NSIndexPath).row])
+        bannerCell.bannerImageView.contentMode = .scaleAspectFill
+        bannerCell.contentView.backgroundColor = UIColor.gray
         return bannerCell
     }
     
     func collectionView(_: UICollectionView,
-                        didSelectItemAtIndexPath indexPath: NSIndexPath){
-        let zoomImageViewController = ZoomImageViewController.init(nibName: "ZoomImageViewController", bundle: nil, imageName: productZoomImageNameArray[indexPath.row] )
+                        didSelectItemAtIndexPath indexPath: IndexPath){
+        let zoomImageViewController = ZoomImageViewController.init(nibName: "ZoomImageViewController", bundle: nil, imageName: productZoomImageNameArray[(indexPath as NSIndexPath).row] )
         
-        presentViewController(zoomImageViewController, animated: true, completion: nil)
+        present(zoomImageViewController, animated: true, completion: nil)
     }
     
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         productPageControl.currentPage = Int(round(scrollView.contentOffset.x / scrollView.bounds.width))
         
     }
 
-    @IBAction func dismissSelf(sender: UISwipeGestureRecognizer) {
-        dismissViewControllerAnimated(true, completion: {
-            print(NSThread())
+    @IBAction func dismissSelf(_ sender: UISwipeGestureRecognizer) {
+        dismiss(animated: true, completion: {
+            print(Thread())
         })
     }
     
     
-    @IBAction func pageChanged(sender: AnyObject) {
+    @IBAction func pageChanged(_ sender: AnyObject) {
         productCollectionView.setContentOffset(CGPoint.init(x: productCollectionView.bounds.width * CGFloat(sender.currentPage), y: 0), animated: true)
 
     }

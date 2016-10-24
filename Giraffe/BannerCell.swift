@@ -22,12 +22,12 @@ class BannerCell: UITableViewCell,UIScrollViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
      //   bannerPageControl.transform = CGAffineTransformMakeScale(1.5, 1.5);
-         bannerCollectionView.registerNib(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: bannerCollectionViewCellReuseIdentifier)
+         bannerCollectionView.register(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: bannerCollectionViewCellReuseIdentifier)
         // Initialization code
         bannerPageControl.numberOfPages = bannerImageNameArray.count
     }
     
-    func collectionView(collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize{
+    func collectionView(_ collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:IndexPath) -> CGSize{
         if collectionView.bounds.width > 400 {
             return CGSize(width: collectionView.bounds.width-24, height: collectionView.bounds.height)
         }
@@ -35,14 +35,14 @@ class BannerCell: UITableViewCell,UIScrollViewDelegate {
     }
     
     
-    func collectionView(collectionView: UICollectionView,
+    func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int{
         return bannerImageNameArray.count
     }
-    func collectionView(collectionView: UICollectionView,
-                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        let bannerCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(bannerCollectionViewCellReuseIdentifier, forIndexPath: indexPath) as! BannerCollectionViewCell
-        bannerCollectionViewCell.bannerImageView.image = UIImage.init(named: bannerImageNameArray[indexPath.row])
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell{
+        let bannerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: bannerCollectionViewCellReuseIdentifier, for: indexPath) as! BannerCollectionViewCell
+        bannerCollectionViewCell.bannerImageView.image = UIImage.init(named: bannerImageNameArray[(indexPath as NSIndexPath).row])
         // bannerCollectionView.backgroundView?.clipsToBounds = true
         
         // bannerCollectionViewCell.contentView.backgroundColor = UIColor.grayColor()
@@ -51,7 +51,7 @@ class BannerCell: UITableViewCell,UIScrollViewDelegate {
     }
     
     func collectionView(_: UICollectionView,
-                        didSelectItemAtIndexPath indexPath: NSIndexPath){
+                        didSelectItemAtIndexPath indexPath: IndexPath){
        
         let tabController = window?.rootViewController as! UITabBarController
         let currentViewController = tabController.viewControllers![0] as! FirstViewController
@@ -61,19 +61,19 @@ class BannerCell: UITableViewCell,UIScrollViewDelegate {
     
     
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         bannerPageControl.currentPage = Int(round(scrollView.contentOffset.x / scrollView.bounds.width))
 
     }
  
     
-    @IBAction func pageChanged(sender: UIPageControl) {
+    @IBAction func pageChanged(_ sender: UIPageControl) {
         
         bannerCollectionView.setContentOffset(CGPoint.init(x: bannerCollectionView.bounds.width * CGFloat(sender.currentPage), y: 0), animated: true)
     }
         
    
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
