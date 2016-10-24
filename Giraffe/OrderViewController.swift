@@ -24,7 +24,7 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
     var productImageNameArray: [String];
     let productCellreuseIdentifier = "image"
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, imageNameArray: [String]!, zoomImageNameArray: [String]!) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, imageNameArray: [String]!, zoomImageNameArray: [String]!) {
         self.productImageNameArray = imageNameArray
         self.productZoomImageNameArray = zoomImageNameArray
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -38,9 +38,9 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         productPageControl.numberOfPages = productImageNameArray.count
-        modalTransitionStyle = .flipHorizontal
+        modalTransitionStyle = .FlipHorizontal
         descriptionTextView.text = "Kimomo dress in tafeta with \"Kimomo 1997\" print.\n -inner side pockets.\n -front warpround fastening with two tie laces and belt"
-         selectedProductCollectionView.register(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: productCellreuseIdentifier)
+         selectedProductCollectionView.registerNib(UINib.init(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: productCellreuseIdentifier)
         // Do any additional setup after loading the view.
     }
 
@@ -63,10 +63,10 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
     }
     func collectionView(collectionView: UICollectionView,
                         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        let bannerCell = collectionView.dequeueReusableCell(withReuseIdentifier: productCellreuseIdentifier, for: indexPath as IndexPath) as! BannerCollectionViewCell
+        let bannerCell = collectionView.dequeueReusableCellWithReuseIdentifier(productCellreuseIdentifier, forIndexPath: indexPath) as! BannerCollectionViewCell
         bannerCell.bannerImageView.image = UIImage.init(named: productImageNameArray[indexPath.row])
-        bannerCell.bannerImageView.contentMode = .scaleAspectFill
-        bannerCell.contentView.backgroundColor = UIColor.gray
+        bannerCell.bannerImageView.contentMode = .ScaleAspectFill
+        bannerCell.contentView.backgroundColor = UIColor.grayColor()
         return bannerCell
     }
     
@@ -74,18 +74,18 @@ class OrderViewController: UIViewController,UIScrollViewDelegate {
                         didSelectItemAtIndexPath indexPath: NSIndexPath){
         let zoomImageViewController = ZoomImageViewController.init(nibName: "ZoomImageViewController", bundle: nil, imageName: productZoomImageNameArray[indexPath.row] )
         
-        present(zoomImageViewController, animated: true, completion: nil)
+        presentViewController(zoomImageViewController, animated: true, completion: nil)
     }
     
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         productPageControl.currentPage = Int(round(scrollView.contentOffset.x / scrollView.bounds.width))
         
     }
 
     @IBAction func dismissSelf(sender: UISwipeGestureRecognizer) {
-        dismiss(animated: true, completion: {
-            print(Thread())
+        dismissViewControllerAnimated(true, completion: {
+            print(NSThread())
         })
     }
     

@@ -21,7 +21,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        brandCollectionView.register(UINib.init(nibName: "BrandCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: brandCellReuseIdentifier)
+        brandCollectionView.registerNib(UINib.init(nibName: "BrandCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: brandCellReuseIdentifier)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -32,27 +32,26 @@ class SecondViewController: UIViewController {
 
     @IBAction func segmentChanged(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
-            sender.setImage(UIImage.init(named: "view_brand_by_logo_icon_clicked"), forSegmentAt: 0)
-            sender.setImage(UIImage.init(named: "view_brand_by_name_icon"), forSegmentAt: 1)
-            brandTableView.isHidden = true
-            brandCollectionView.isHidden = false
+            sender.setImage(UIImage.init(named: "view_brand_by_logo_icon_clicked"), forSegmentAtIndex: 0)
+            sender.setImage(UIImage.init(named: "view_brand_by_name_icon"), forSegmentAtIndex: 1)
+            brandTableView.hidden = true
+            brandCollectionView.hidden = false
         }
         else {
-            sender.setImage(UIImage.init(named: "view_brand_by_logo_icon"), forSegmentAt: 0)
-            sender.setImage(UIImage.init(named: "view_brand_by_name_icon_clicked"), forSegmentAt: 1)
-            brandTableView.isHidden = false
-            brandCollectionView.isHidden = true
+            sender.setImage(UIImage.init(named: "view_brand_by_logo_icon"), forSegmentAtIndex: 0)
+            sender.setImage(UIImage.init(named: "view_brand_by_name_icon_clicked"), forSegmentAtIndex: 1)
+            brandTableView.hidden = false
+            brandCollectionView.hidden = true
         }
     }
     
     func collectionView(collectionView : UICollectionView,layout collectionViewLayout:UICollectionViewLayout,sizeForItemAtIndexPath indexPath:NSIndexPath) -> CGSize{
         
         if collectionView.bounds.width > 400 {
-            
-            return CGSize(width:collectionView.bounds.width/3.0-8, height:collectionView.bounds.width/3.0-8)
+            return CGSizeMake(collectionView.bounds.width/3.0-8, collectionView.bounds.width/3.0-8)
         }
         
-        return CGSize(width:collectionView.bounds.width/3.0-5.4, height:collectionView.bounds.width/3.0-5.4)
+        return CGSizeMake(collectionView.bounds.width/3.0-5.4, collectionView.bounds.width/3.0-5.4)
     }
     
         
@@ -61,10 +60,10 @@ class SecondViewController: UIViewController {
         return brandImageNameArray.count
     }
     func collectionView(collectionView: UICollectionView,
-                        cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell{
-        let brandCell = collectionView.dequeueReusableCell(withReuseIdentifier: brandCellReuseIdentifier, for: indexPath) as! BrandCollectionViewCell
+                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
+        let brandCell = collectionView.dequeueReusableCellWithReuseIdentifier(brandCellReuseIdentifier, forIndexPath: indexPath) as! BrandCollectionViewCell
         brandCell.brandImageView.image = UIImage.init(named: brandImageNameArray[indexPath.row])
-        brandCell.contentView.backgroundColor = UIColor.gray
+        brandCell.contentView.backgroundColor = UIColor.grayColor()
         return brandCell
     }
     
@@ -87,9 +86,9 @@ class SecondViewController: UIViewController {
     
     func tableView(tablewview: UITableView,
                    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var brandCell = tablewview.dequeueReusableCell(withIdentifier: brandCellReuseIdentifier)
+        var brandCell = tablewview.dequeueReusableCellWithIdentifier(brandCellReuseIdentifier)
         if brandCell == nil {
-             brandCell = UITableViewCell.init(style: .default, reuseIdentifier: brandCellReuseIdentifier)
+             brandCell = UITableViewCell.init(style: .Default, reuseIdentifier: brandCellReuseIdentifier)
         }
         brandCell?.textLabel?.text = brandImageNameArray[indexPath.row]
         return brandCell!
