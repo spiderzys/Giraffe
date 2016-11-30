@@ -112,7 +112,7 @@
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "setSelected(_:animated:)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -128,7 +128,7 @@
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "scrollViewDidEndDecelerating(_:)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,7 +144,7 @@
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "pageChanged(_:)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
